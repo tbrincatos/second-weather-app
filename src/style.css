@@ -1,0 +1,40 @@
+h1 {
+  font-family: "Indie Flower", cursive;
+  font-size: 65px;
+  padding-top: 70px;
+  text-align: center;
+}
+
+h4 {
+  font-family: "Noto Serif", serif;
+  font-size: medium;
+}
+.card {
+  background-image: url("img/imgs/blue-skies.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 600px;
+  padding-top: 10px;
+}
+.date {
+  padding-left: 4px;
+}
+.current-location {
+  padding: 1px 8.5px;
+}
+.current-location,
+.search-input-box,
+.submit-button {
+  background-color: transparent;
+  border: 1px solid rgb(194, 188, 188);
+  border-radius: 4px;
+}
+.current-location,
+.submit-button {
+  transition: all 150ms ease;
+}
+.current-location:hover,
+.submit-button:hover {
+  cursor: pointer;
+  background-color: rgb(194, 188, 188);
+}

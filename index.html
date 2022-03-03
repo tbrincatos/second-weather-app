@@ -4,7 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather App</title>
+    <script
+      src="https://kit.fontawesome.com/1656b8a3ab.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Neucha&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Patrick+Hand&family=Quattrocento:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -15,7 +25,37 @@
   </head>
   <body>
     <div class="container">
-      <h1>Weather App</h1>
+      <div class="card">
+        <div class="row">
+          <div class="col">
+            <h4 class="date">Fri 4 March 2022 20:45</h4>
+          </div>
+          <div class="col">
+            <form>
+              <input
+                type="text"
+                placeholder="Search location"
+                class="search-input-box"
+                id="search-input"
+                autofocus="on"
+                autocomplete="on"
+              />
+              <input
+                type="submit"
+                value="🔍"
+                class="submit-button"
+                id="submit"
+              />
+              <button class="current-location">📍</button>
+            </form>
+          </div>
+        </div>
+
+        <h1 id="city-name">Paris</h1>
+        <h1 id="city-name">Paris</h1>
+        <h1 id="city-name">Paris</h1>
+        <h1 id="city-name">Paris</h1>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
