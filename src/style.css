@@ -6,19 +6,26 @@ h1 {
 }
 
 h4 {
-  font-family: "Noto Serif", serif;
   font-size: medium;
+  line-height: 2;
+  margin-bottom: 0;
+  padding-left: 15px;
 }
+form {
+  padding: 0;
+}
+
 .card {
   background-image: url("img/imgs/blue-skies.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
   padding-top: 10px;
+  position: static;
 }
-.date {
-  padding-left: 4px;
-}
+
 .current-location {
   padding: 1px 8.5px;
 }
