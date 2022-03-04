@@ -1,10 +1,3 @@
-h1 {
-  font-family: "Indie Flower", cursive;
-  font-size: 65px;
-  padding-top: 70px;
-  text-align: center;
-}
-
 h4 {
   font-size: medium;
   line-height: 2;
@@ -13,6 +6,47 @@ h4 {
 }
 form {
   padding: 0;
+  padding-right: 15px;
+}
+h1 {
+  font-size: 80px;
+  padding-top: 100px;
+}
+a {
+  color: black;
+}
+
+h1,
+.weather-desc {
+  font-family: "Indie Flower", cursive;
+}
+h1,
+footer,
+.weather-desc,
+.temperature {
+  text-align: center;
+}
+
+.weather-desc {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.temperature {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 50px;
+  margin-bottom: 100px;
+}
+
+.units {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+}
+.unit {
+  font-size: 15px;
+}
+.cel {
+  line-height: 2;
 }
 
 .card {
@@ -44,4 +78,9 @@ form {
 .submit-button:hover {
   cursor: pointer;
   background-color: rgb(194, 188, 188);
+}
+.weather-forecast {
+  line-height: 2.5;
+  text-align: center;
+  padding-bottom: 20px;
 }

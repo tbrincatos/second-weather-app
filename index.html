@@ -31,14 +31,13 @@
             <h4 class="date">Fri 4 March 2022 20:45</h4>
           </div>
           <div class="col">
-            <form>
+            <form class="text-right">
               <input
                 type="text"
                 placeholder="Search location"
                 class="search-input-box"
                 id="search-input"
                 autofocus="on"
-                autocomplete="on"
               />
               <input
                 type="submit"
@@ -55,7 +54,47 @@
         </div>
 
         <h1 id="city-name">Paris</h1>
+        <h3 class="weather-desc" id="weather-description">Clear skies</h3>
+        <h2 class="temperature">
+          <span class="current-temp">10</span>
+          <ul class="units">
+            <li class="unit cel">
+              <a href="#"><strong>°C</strong></a>
+            </li>
+            <li class="unit fah"><a href="#">°F</a></li>
+          </ul>
+        </h2>
+        
+        <section class="weather-forecast p-4">
+          <div class="row first-day">
+            <div class="col first day">Monday</div>
+            <div class="col first temp"><strong>15°C</strong>|13°C</div>
+            <div class="col first desc">☁</div>
+          </div>
+          <div class="row second-day">
+            <div class="col second day">Tuesday</div>
+            <div class="col second temp"><strong>17°C</strong>|15°C</div>
+            <div class="col second desc">🌞</div>
+          </div>
+          <div class="row third-day">
+            <div class="col third day">Wednesday</div>
+            <div class="col third temp"><strong>14°C</strong>|12°C</div>
+            <div class="col third desc">⛅</div>
+          </div>
+          <div class="row fourth-day">
+            <div class="col fourth day">Thursday</div>
+            <div class="col fourth temp"><strong>12°C</strong>|9°C</div>
+            <div class="col fourth desc">🌧</div>
+          </div>
+          <div class="row fifth-day">
+            <div class="col fifth day">Friday</div>
+            <div class="col fifth temp"><strong>10°C</strong>|7°C</div>
+            <div class="col fifth desc">🌪</div>
+          </section>
+        </div>
+        <br />
       </div>
+      <footer><a href="#">Open-source code </a>by Tamsin Brincat 👩‍🦰</footer>
     </div>
     <script src="src/app.js"></script>
   </body>
