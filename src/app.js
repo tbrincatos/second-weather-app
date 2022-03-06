@@ -37,9 +37,12 @@ function injectDate(date) {
 injectDate(new Date());
 
 function handleData(response) {
-  console.log(response.data.name);
-  console.log(response.data.main.temp);
-  console.log(response.data.weather[0].description);
+  document.querySelector("#city-name").innerHTML = response.data.name;
+  document.querySelector("#current-temp-number").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#weather-description").innerHTML =
+    response.data.weather[0].description;
 }
 
 function handleCoords(position) {
