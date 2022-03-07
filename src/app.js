@@ -49,10 +49,22 @@ function displayDescription(response) {
     response.data.weather[0].main;
 }
 
+function displayWeatherEmoji(response) {
+  let icon = document.querySelector("#weather-emoji");
+  let emoji = response.data.weather[0].icon;
+  icon.setAttribute("src", `http://openweathermap.org/img/wn/${emoji}@2x.png`);
+}
+function windInfo(response) {
+  document.querySelector("#wind-speed").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+}
 function displayElements(response) {
   displayCity(response);
   displayCelsiusTemp(response);
   displayDescription(response);
+  displayWeatherEmoji(response);
+  windInfo(response);
 }
 
 function handleCoords(position) {
@@ -75,10 +87,10 @@ currentWeather.addEventListener("click", getCoords);
 // shall I use a change class name? instead of all of this?
 
 function calculateFahrenheit() {
-  document.querySelector("#fahrenheit").innerHTML = `<strong>ì§¸F</strong>`;
+  document.querySelector("#fahrenheit").innerHTML = `<strong>°F</strong>`;
   document.querySelector(
     "#celsius"
-  ).innerHTML = ` <a href="#" id="convert-to-celsius">ì§¸C </a>`;
+  ).innerHTML = ` <a href="#" id="convert-to-celsius">°C </a>`;
   let backToCelsius = document.querySelector("#convert-to-celsius");
   backToCelsius.addEventListener("click", convertBackToCelsius);
   let celsiusTemp = document.querySelector("#current-temp-number").innerHTML;
@@ -95,10 +107,10 @@ let fahrenheit = document.querySelector("#convert-to-fahrenheit");
 fahrenheit.addEventListener("click", displayFahrenheitTemp);
 
 function calculateCelsius() {
-  document.querySelector("#celsius").innerHTML = `<strong>ì§¸C</strong>`;
+  document.querySelector("#celsius").innerHTML = `<strong>°C</strong>`;
   document.querySelector(
     "#fahrenheit"
-  ).innerHTML = `<a href="#" id="convert-to-fahrenheit">ì§¸F</a>`;
+  ).innerHTML = `<a href="#" id="convert-to-fahrenheit">°F</a>`;
   let fahrenheit = document.querySelector("#convert-to-fahrenheit");
   fahrenheit.addEventListener("click", displayFahrenheitTemp);
   let fahTemp = document.querySelector("#current-temp-number").innerHTML;

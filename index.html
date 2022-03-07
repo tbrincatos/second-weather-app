@@ -56,8 +56,10 @@
         </div>
 
         <h1 id="city-name"></h1>
-        <h3 class="weather-desc" id="weather-description"></h3>
-        <h2 class="temperature">
+        <div class="weather-details">
+                <h3 class="weather-desc" id="weather-description"></h3><img src="#" alt="#" id="weather-emoji"> </div> 
+        
+                <h2 class="temperature"> 
           <span class="current-temp" id="current-temp-number"></span>
           <ul class="units">
             <li class="unit cel" id="celsius">
@@ -66,7 +68,9 @@
             <li class="unit fah" id="fahrenheit"><a href="#" id="convert-to-fahrenheit">°F</a></li>
           </ul>
         </h2>
-        
+        <div class="wind-details">
+        🌪 <span id="wind-speed"></span> km/h
+        </div>
         <section class="weather-forecast p-4">
           <div class="row first-day">
             <div class="col first day">Monday</div>

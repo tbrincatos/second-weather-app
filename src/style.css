@@ -22,7 +22,8 @@ h1,
 }
 h1,
 footer,
-.weather-desc,
+.weather-details,
+.wind-details,
 .temperature {
   text-align: center;
 }
@@ -35,9 +36,10 @@ footer,
 .temperature {
   font-family: "Quattrocento Sans", sans-serif;
   font-size: 50px;
+}
+.wind-details {
   margin-bottom: 100px;
 }
-
 .units {
   list-style: none;
   display: inline-block;
