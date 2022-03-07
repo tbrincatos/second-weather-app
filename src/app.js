@@ -46,7 +46,13 @@ function displayCelsiusTemp(response) {
 }
 function displayDescription(response) {
   document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].description;
+    response.data.weather[0].main;
+}
+
+function displayElements(response) {
+  displayCity(response);
+  displayCelsiusTemp(response);
+  displayDescription(response);
 }
 
 function handleCoords(position) {
@@ -56,9 +62,7 @@ function handleCoords(position) {
   let unit = `metric`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=${unit}&appid=${apiKey}`;
 
-  axios.get(apiUrl).then(displayCity);
-  axios.get(apiUrl).then(displayCelsiusTemp);
-  axios.get(apiUrl).then(displayDescription);
+  axios.get(apiUrl).then(displayElements);
 }
 function getCoords(event) {
   event.preventDefault();
@@ -68,11 +72,13 @@ function getCoords(event) {
 let currentWeather = document.querySelector("#current-location-weather");
 currentWeather.addEventListener("click", getCoords);
 
+// shall I use a change class name? instead of all of this?
+
 function calculateFahrenheit() {
-  document.querySelector("#fahrenheit").innerHTML = `<strong>°F</strong>`;
+  document.querySelector("#fahrenheit").innerHTML = `<strong>ì§¸F</strong>`;
   document.querySelector(
     "#celsius"
-  ).innerHTML = ` <a href="#" id="convert-to-celsius">°C </a>`;
+  ).innerHTML = ` <a href="#" id="convert-to-celsius">ì§¸C </a>`;
   let backToCelsius = document.querySelector("#convert-to-celsius");
   backToCelsius.addEventListener("click", convertBackToCelsius);
   let celsiusTemp = document.querySelector("#current-temp-number").innerHTML;
@@ -89,10 +95,10 @@ let fahrenheit = document.querySelector("#convert-to-fahrenheit");
 fahrenheit.addEventListener("click", displayFahrenheitTemp);
 
 function calculateCelsius() {
-  document.querySelector("#celsius").innerHTML = `<strong>°C</strong>`;
+  document.querySelector("#celsius").innerHTML = `<strong>ì§¸C</strong>`;
   document.querySelector(
     "#fahrenheit"
-  ).innerHTML = `<a href="#" id="convert-to-fahrenheit">°F</a>`;
+  ).innerHTML = `<a href="#" id="convert-to-fahrenheit">ì§¸F</a>`;
   let fahrenheit = document.querySelector("#convert-to-fahrenheit");
   fahrenheit.addEventListener("click", displayFahrenheitTemp);
   let fahTemp = document.querySelector("#current-temp-number").innerHTML;
@@ -105,14 +111,14 @@ function convertBackToCelsius(event) {
   event.preventDefault();
   calculateCelsius();
 }
+// shall i send metric as a parameter?
+
 function searchCity(city) {
   let apiKey = `62f780f73f5ee00aa0f4d27f32e096c2`;
   let unit = `metric`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
 
-  axios.get(apiUrl).then(displayCity);
-  axios.get(apiUrl).then(displayCelsiusTemp);
-  axios.get(apiUrl).then(displayDescription);
+  axios.get(apiUrl).then(displayElements);
 }
 function handleSubmit(event) {
   event.preventDefault();
@@ -127,3 +133,5 @@ function handleSubmit(event) {
 }
 let searchEngineForm = document.querySelector("#search-engine-form");
 searchEngineForm.addEventListener("submit", handleSubmit);
+
+searchCity(`Rome`);
