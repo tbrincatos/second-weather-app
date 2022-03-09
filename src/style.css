@@ -31,20 +31,21 @@ h1,
 
 .weather-details {
   margin-bottom: 100px;
+  line-height: 1.2;
 }
 .weather-desc {
   font-size: 20px;
   font-weight: bolder;
-  margin-bottom: 0;
   text-transform: uppercase;
 }
-.wind-details {
-  margin-bottom: 15px;
+.weather-desc,
+.wind-details,
+.temperature {
+  margin-bottom: 0;
 }
 .temperature {
   font-family: "Quattrocento Sans", sans-serif;
   font-size: 50px;
-  margin-bottom: 0;
 }
 
 .units {
