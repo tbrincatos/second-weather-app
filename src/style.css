@@ -10,15 +10,11 @@ form {
 }
 h1 {
   font-size: 80px;
+  margin-bottom: 5px;
   padding-top: 100px;
 }
 a {
   color: black;
-}
-
-h1,
-.weather-desc {
-  font-family: "Indie Flower", cursive;
 }
 h1,
 footer,
@@ -28,18 +24,29 @@ footer,
   text-align: center;
 }
 
+h1,
+.weather-desc {
+  font-family: "Indie Flower", cursive;
+}
+
+.weather-details {
+  margin-bottom: 100px;
+}
 .weather-desc {
   font-size: 20px;
   font-weight: bolder;
+  margin-bottom: 0;
   text-transform: uppercase;
+}
+.wind-details {
+  margin-bottom: 15px;
 }
 .temperature {
   font-family: "Quattrocento Sans", sans-serif;
   font-size: 50px;
+  margin-bottom: 0;
 }
-.wind-details {
-  margin-bottom: 100px;
-}
+
 .units {
   list-style: none;
   display: inline-block;

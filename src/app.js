@@ -49,11 +49,6 @@ function displayDescription(response) {
     response.data.weather[0].main;
 }
 
-function displayWeatherEmoji(response) {
-  let icon = document.querySelector("#weather-emoji");
-  let emoji = response.data.weather[0].icon;
-  icon.setAttribute("src", `http://openweathermap.org/img/wn/${emoji}@2x.png`);
-}
 function windInfo(response) {
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed
@@ -63,7 +58,6 @@ function displayElements(response) {
   displayCity(response);
   displayCelsiusTemp(response);
   displayDescription(response);
-  displayWeatherEmoji(response);
   windInfo(response);
 }
 
