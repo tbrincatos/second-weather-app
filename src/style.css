@@ -95,3 +95,11 @@ h1,
   text-align: center;
   padding-bottom: 20px;
 }
+.unit-styling {
+  font-weight: bolder;
+}
+.unit-styling:hover {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}

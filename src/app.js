@@ -40,9 +40,8 @@ function displayCity(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
 }
 function displayCelsiusTemp(response) {
-  document.querySelector("#current-temp-number").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTempNumber = Math.round(response.data.main.temp);
+  document.querySelector("#current-temp-number").innerHTML = celsiusTempNumber;
 }
 function displayDescription(response) {
   document.querySelector("#weather-description").innerHTML =
@@ -78,17 +77,20 @@ function getCoords(event) {
 let currentWeather = document.querySelector("#current-location-weather");
 currentWeather.addEventListener("click", getCoords);
 
-// shall I use a change class name? instead of all of this?
+function calculateCelsius() {
+  backToCelsius.classList.add("unit-styling");
+  fahrenheit.classList.remove("unit-styling");
+  document.querySelector("#current-temp-number").innerHTML =
+    Math.round(celsiusTempNumber);
+}
+function convertBackToCelsius(event) {
+  event.preventDefault();
+  calculateCelsius();
+}
 
 function calculateFahrenheit() {
-  document.querySelector("#fahrenheit").innerHTML = `<strong>°F</strong>`;
-  document.querySelector(
-    "#celsius"
-  ).innerHTML = ` <a href="#" id="convert-to-celsius">°C </a>`;
-  let backToCelsius = document.querySelector("#convert-to-celsius");
-  backToCelsius.addEventListener("click", convertBackToCelsius);
-  let celsiusTemp = document.querySelector("#current-temp-number").innerHTML;
-  let celsiusTempNumber = Number(celsiusTemp);
+  fahrenheit.classList.add("unit-styling");
+  backToCelsius.classList.remove("unit-styling");
   document.querySelector("#current-temp-number").innerHTML = Math.round(
     (celsiusTempNumber * 9) / 5 + 32
   );
@@ -100,24 +102,10 @@ function displayFahrenheitTemp(event) {
 let fahrenheit = document.querySelector("#convert-to-fahrenheit");
 fahrenheit.addEventListener("click", displayFahrenheitTemp);
 
-function calculateCelsius() {
-  document.querySelector("#celsius").innerHTML = `<strong>°C</strong>`;
-  document.querySelector(
-    "#fahrenheit"
-  ).innerHTML = `<a href="#" id="convert-to-fahrenheit">°F</a>`;
-  let fahrenheit = document.querySelector("#convert-to-fahrenheit");
-  fahrenheit.addEventListener("click", displayFahrenheitTemp);
-  let fahTemp = document.querySelector("#current-temp-number").innerHTML;
-  let fahTempNumber = Number(fahTemp);
-  document.querySelector("#current-temp-number").innerHTML = Math.round(
-    ((fahTempNumber - 32) * 5) / 9
-  );
-}
-function convertBackToCelsius(event) {
-  event.preventDefault();
-  calculateCelsius();
-}
-// shall i send metric as a parameter?
+let backToCelsius = document.querySelector("#convert-to-celsius");
+backToCelsius.addEventListener("click", convertBackToCelsius);
+
+let celsiusTempNumber = null;
 
 function searchCity(city) {
   let apiKey = `62f780f73f5ee00aa0f4d27f32e096c2`;
