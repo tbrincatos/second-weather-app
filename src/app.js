@@ -112,13 +112,40 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayElements);
 }
-function displayForecast() {
+function displayDate(timestamp) {
+  let rawDate = timestamp * 1000;
+  let formattedDate = new Date(rawDate);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[formattedDate.getDay()];
+  return day;
+}
+function displayForecast(response) {
+  let generalContent = response.data.daily;
   let forecastSection = document.querySelector("#forecast-section");
-  let forecastContent = `<div class="row">
-            <div class="col">Monday</div>
-            <div class="col"><strong>15°C</strong>|13°C</div>
-            <div class="col">☁</div>
+  let forecastContent = "";
+  generalContent.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 6) {
+      forecastContent =
+        forecastContent +
+        `<div class="row">
+            <div class="col">${displayDate(forecastDay.dt)}</div>
+            <div class="col"><strong>${Math.round(
+              forecastDay.temp.max
+            )}</strong> | ${Math.round(forecastDay.temp.min)}°C</div>
+            <div class="col"> <img src="https://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png" width="40"></div>
           </div>`;
+    }
+  });
   forecastSection.innerHTML = forecastContent;
 }
 
@@ -142,4 +169,4 @@ let searchEngineForm = document.querySelector("#search-engine-form");
 searchEngineForm.addEventListener("submit", handleSubmit);
 
 const apiKey = `62f780f73f5ee00aa0f4d27f32e096c2`;
-searchCity(`Rome`);
+searchCity(`Paris`);
