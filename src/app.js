@@ -55,7 +55,6 @@ function windInfo(response) {
 }
 function displayBackground(response) {
   let cardBackground = document.querySelector(".card");
-
   cardBackground.classList.remove(
     "clear-night",
     "few-clouds",
@@ -66,7 +65,7 @@ function displayBackground(response) {
     "snow",
     "mist"
   );
-  console.log(response.data.weather[0].icon);
+
   if (
     response.data.weather[0].icon === "01n" ||
     response.data.weather[0].icon === "02n"
