@@ -58,6 +58,7 @@ function displayElements(response) {
   displayCelsiusTemp(response);
   displayDescription(response);
   windInfo(response);
+  getForecast(response.data.coord);
 }
 
 function handleCoords(position) {
@@ -65,7 +66,7 @@ function handleCoords(position) {
   let lat = position.coords.latitude;
   let unit = `metric`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=${unit}&appid=${apiKey}`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayElements);
 }
 function getCoords(event) {
@@ -109,8 +110,22 @@ let celsiusTempNumber = null;
 function searchCity(city) {
   let unit = `metric`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayElements);
+}
+function displayForecast() {
+  let forecastSection = document.querySelector("#forecast-section");
+  let forecastContent = `<div class="row">
+            <div class="col">Monday</div>
+            <div class="col"><strong>15°C</strong>|13°C</div>
+            <div class="col">☁</div>
+          </div>`;
+  forecastSection.innerHTML = forecastContent;
+}
+
+function getForecast(coords) {
+  let unit = `metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&units=${unit}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 function handleSubmit(event) {
   event.preventDefault();
