@@ -16,6 +16,9 @@ h1 {
 a {
   color: black;
 }
+a:hover {
+  color: #f7630c;
+}
 h1,
 footer,
 .weather-details,
@@ -28,37 +31,31 @@ h1,
 .weather-desc {
   font-family: "Indie Flower", cursive;
 }
+small {
+  font-size: 15px;
+  position: relative;
+  top: -5px;
+}
 
 .weather-details {
   margin-bottom: 100px;
   line-height: 1.2;
 }
-.weather-desc {
-  font-size: 24px;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-.weather-desc,
 .wind-details,
 .temperature {
   margin-bottom: 0;
+}
+.weather-desc {
+  font-size: 24px;
+  font-weight: bolder;
+  margin-bottom: 3px;
+  text-transform: uppercase;
 }
 .temperature {
   font-family: "Quattrocento Sans", sans-serif;
   font-size: 50px;
 }
 
-.units {
-  list-style: none;
-  display: inline-block;
-  padding: 0;
-}
-.unit {
-  font-size: 15px;
-}
-.cel {
-  line-height: 2;
-}
 .card,
 .clear-night,
 .few-clouds,
@@ -140,14 +137,7 @@ h1,
   text-align: center;
   padding-bottom: 20px;
 }
-.unit-styling {
-  font-weight: bolder;
-}
-.unit-styling:hover {
-  color: black;
-  cursor: default;
-  text-decoration: none;
-}
+
 .search-input-box {
   color: rgb(194, 188, 188);
 }

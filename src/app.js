@@ -40,7 +40,7 @@ function displayCity(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
 }
 function displayCelsiusTemp(response) {
-  celsiusTempNumber = Math.round(response.data.main.temp);
+  let celsiusTempNumber = Math.round(response.data.main.temp);
   document.querySelector("#current-temp-number").innerHTML = celsiusTempNumber;
 }
 function displayDescription(response) {
@@ -131,36 +131,6 @@ function getCoords(event) {
 
 let currentWeather = document.querySelector("#current-location-weather");
 currentWeather.addEventListener("click", getCoords);
-
-function calculateCelsius() {
-  backToCelsius.classList.add("unit-styling");
-  fahrenheit.classList.remove("unit-styling");
-  document.querySelector("#current-temp-number").innerHTML =
-    Math.round(celsiusTempNumber);
-}
-function convertBackToCelsius(event) {
-  event.preventDefault();
-  calculateCelsius();
-}
-
-function calculateFahrenheit() {
-  fahrenheit.classList.add("unit-styling");
-  backToCelsius.classList.remove("unit-styling");
-  document.querySelector("#current-temp-number").innerHTML = Math.round(
-    (celsiusTempNumber * 9) / 5 + 32
-  );
-}
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  calculateFahrenheit();
-}
-let fahrenheit = document.querySelector("#convert-to-fahrenheit");
-fahrenheit.addEventListener("click", displayFahrenheitTemp);
-
-let backToCelsius = document.querySelector("#convert-to-celsius");
-backToCelsius.addEventListener("click", convertBackToCelsius);
-
-let celsiusTempNumber = null;
 
 function searchCity(city) {
   let unit = `metric`;
