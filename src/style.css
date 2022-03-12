@@ -34,7 +34,7 @@ h1,
   line-height: 1.2;
 }
 .weather-desc {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bolder;
   text-transform: uppercase;
 }
@@ -84,10 +84,7 @@ h1,
   background-image: url("img/imgs/clear-night.jpg");
   color: #f2f2f1;
 }
-.night-clouds {
-  background-image: url("img/imgs/night-clouds.jpg");
-  color: #f2f2f1;
-}
+
 .few-clouds {
   background-image: url("img/imgs/few-clouds.jpg");
   color: rgba(0, 0, 0, 0.7);
@@ -96,15 +93,15 @@ h1,
   background-image: url("img/imgs/broken-overcast-clouds.jpg");
   color: black;
 }
-
+.night-clouds {
+  background-image: url("img/imgs/night-clouds.jpg");
+  color: #f2f2f1;
+}
 .rain {
   background-image: url("img/imgs/rain.jpg");
   color: black;
 }
-.mist {
-  background-image: url("img/imgs/mist.jpg");
-  color: rgba(0, 0, 0, 0.7);
-}
+
 .thunderstorm {
   background-image: url("img/imgs/thunderstorm.jpg");
   color: #f8e5ea;
@@ -112,6 +109,11 @@ h1,
 .snow {
   background-image: url("img/imgs/snow.jpg");
   color: #48484a;
+}
+
+.mist {
+  background-image: url("img/imgs/mist.jpg");
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .current-location {

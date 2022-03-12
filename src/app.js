@@ -55,8 +55,22 @@ function windInfo(response) {
 }
 function displayBackground(response) {
   let cardBackground = document.querySelector(".card");
+
+  cardBackground.classList.remove(
+    "clear-night",
+    "few-clouds",
+    "broken-overcast-clouds",
+    "night-clouds",
+    "rain",
+    "thunderstorm",
+    "snow",
+    "mist"
+  );
   console.log(response.data.weather[0].icon);
-  if (response.data.weather[0].icon === "01n") {
+  if (
+    response.data.weather[0].icon === "01n" ||
+    response.data.weather[0].icon === "02n"
+  ) {
     cardBackground.classList.add("clear-night");
   } else if (
     response.data.weather[0].icon === "02d" ||
@@ -66,7 +80,6 @@ function displayBackground(response) {
   } else if (response.data.weather[0].icon === "04d") {
     cardBackground.classList.add("broken-overcast-clouds");
   } else if (
-    response.data.weather[0].icon === "02n" ||
     response.data.weather[0].icon === "03n" ||
     response.data.weather[0].icon === "04n"
   ) {
