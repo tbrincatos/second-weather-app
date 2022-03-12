@@ -53,11 +53,54 @@ function windInfo(response) {
     response.data.wind.speed
   );
 }
+function displayBackground(response) {
+  let cardBackground = document.querySelector(".card");
+  console.log(response.data.weather[0].icon);
+  if (response.data.weather[0].icon === "01n") {
+    cardBackground.classList.add("clear-night");
+  } else if (
+    response.data.weather[0].icon === "02d" ||
+    response.data.weather[0].icon === "03d"
+  ) {
+    cardBackground.classList.add("few-clouds");
+  } else if (response.data.weather[0].icon === "04d") {
+    cardBackground.classList.add("broken-overcast-clouds");
+  } else if (
+    response.data.weather[0].icon === "02n" ||
+    response.data.weather[0].icon === "03n" ||
+    response.data.weather[0].icon === "04n"
+  ) {
+    cardBackground.classList.add("night-clouds");
+  } else if (
+    response.data.weather[0].icon === "09d" ||
+    response.data.weather[0].icon === "09n" ||
+    response.data.weather[0].icon === "10d" ||
+    response.data.weather[0].icon === "10n"
+  ) {
+    cardBackground.classList.add("rain");
+  } else if (
+    response.data.weather[0].icon === "11d" ||
+    response.data.weather[0].icon === "11n"
+  ) {
+    cardBackground.classList.add("thunderstorm");
+  } else if (
+    response.data.weather[0].icon === "13d" ||
+    response.data.weather[0].icon === "13n"
+  ) {
+    cardBackground.classList.add("snow");
+  } else if (
+    response.data.weather[0].icon === "50d" ||
+    response.data.weather[0].icon === "50n"
+  ) {
+    cardBackground.classList.add("mist");
+  }
+}
 function displayElements(response) {
   displayCity(response);
   displayCelsiusTemp(response);
   displayDescription(response);
   windInfo(response);
+  displayBackground(response);
   getForecast(response.data.coord);
 }
 

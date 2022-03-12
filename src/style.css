@@ -59,9 +59,15 @@ h1,
 .cel {
   line-height: 2;
 }
-
-.card {
-  background-image: url("img/imgs/blue-skies.jpg");
+.card,
+.clear-night,
+.few-clouds,
+.broken-overcast-clouds,
+.night-clouds,
+.rain,
+.thunderstorm,
+.snow,
+.mist {
   background-repeat: no-repeat;
   background-size: cover;
   display: block;
@@ -70,7 +76,43 @@ h1,
   padding-top: 10px;
   position: static;
 }
+.card {
+  background-image: url("img/imgs/clear-day.jpg");
+  color: rgba(0, 0, 0, 0.7);
+}
+.clear-night {
+  background-image: url("img/imgs/clear-night.jpg");
+  color: #f2f2f1;
+}
+.night-clouds {
+  background-image: url("img/imgs/night-clouds.jpg");
+  color: #f2f2f1;
+}
+.few-clouds {
+  background-image: url("img/imgs/few-clouds.jpg");
+  color: rgba(0, 0, 0, 0.7);
+}
+.broken-overcast-clouds {
+  background-image: url("img/imgs/broken-overcast-clouds.jpg");
+  color: black;
+}
 
+.rain {
+  background-image: url("img/imgs/rain.jpg");
+  color: black;
+}
+.thunderstorm {
+  background-image: url("img/imgs/thunderstorm.jpg");
+  color: #f8e5ea;
+}
+.snow {
+  background-image: url("img/imgs/snow.jpg");
+  color: #48484a;
+}
+.mist {
+  background-image: url("img/imgs/mist.jpg");
+  color: rgba(0, 0, 0, 0.7);
+}
 .current-location {
   padding: 1px 8.5px;
 }
@@ -102,4 +144,7 @@ h1,
   color: black;
   cursor: default;
   text-decoration: none;
+}
+.search-input-box {
+  color: rgb(194, 188, 188);
 }
