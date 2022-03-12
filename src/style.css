@@ -101,6 +101,10 @@ h1,
   background-image: url("img/imgs/rain.jpg");
   color: black;
 }
+.mist {
+  background-image: url("img/imgs/mist.jpg");
+  color: rgba(0, 0, 0, 0.7);
+}
 .thunderstorm {
   background-image: url("img/imgs/thunderstorm.jpg");
   color: #f8e5ea;
@@ -109,10 +113,7 @@ h1,
   background-image: url("img/imgs/snow.jpg");
   color: #48484a;
 }
-.mist {
-  background-image: url("img/imgs/mist.jpg");
-  color: rgba(0, 0, 0, 0.7);
-}
+
 .current-location {
   padding: 1px 8.5px;
 }
