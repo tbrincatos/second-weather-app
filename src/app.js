@@ -1,4 +1,4 @@
-function displayDate(date) {
+function displayTodayDate(date) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   let day = days[date.getDay()];
   let months = [
@@ -31,7 +31,7 @@ function displayDate(date) {
   return formattedDate;
 }
 function injectDate(date) {
-  document.querySelector("#current-date").innerHTML = displayDate(date);
+  document.querySelector("#current-date").innerHTML = displayTodayDate(date);
 }
 
 injectDate(new Date());
