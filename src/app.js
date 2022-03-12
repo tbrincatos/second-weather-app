@@ -61,12 +61,11 @@ function displayElements(response) {
 }
 
 function handleCoords(position) {
-  let apiKey = `62f780f73f5ee00aa0f4d27f32e096c2`;
   let long = position.coords.longitude;
   let lat = position.coords.latitude;
   let unit = `metric`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=${unit}&appid=${apiKey}`;
-
+  console.log(apiUrl);
   axios.get(apiUrl).then(displayElements);
 }
 function getCoords(event) {
@@ -108,10 +107,9 @@ backToCelsius.addEventListener("click", convertBackToCelsius);
 let celsiusTempNumber = null;
 
 function searchCity(city) {
-  let apiKey = `62f780f73f5ee00aa0f4d27f32e096c2`;
   let unit = `metric`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
-
+  console.log(apiUrl);
   axios.get(apiUrl).then(displayElements);
 }
 function handleSubmit(event) {
@@ -128,4 +126,5 @@ function handleSubmit(event) {
 let searchEngineForm = document.querySelector("#search-engine-form");
 searchEngineForm.addEventListener("submit", handleSubmit);
 
+const apiKey = `62f780f73f5ee00aa0f4d27f32e096c2`;
 searchCity(`Rome`);
