@@ -50,7 +50,7 @@ function displayDescription(response) {
 
 function windInfo(response) {
   document.querySelector("#wind-speed").innerHTML = Math.round(
-    response.data.wind.speed
+    response.data.wind.speed * 3.6
   );
 }
 function displayBackground(response) {
