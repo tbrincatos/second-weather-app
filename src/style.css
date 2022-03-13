@@ -10,7 +10,7 @@ form {
 }
 h1 {
   font-size: 80px;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   padding-top: 120px;
 }
 a {
@@ -34,7 +34,8 @@ h1,
 small {
   font-size: 15px;
   position: relative;
-  top: -5px;
+  top: -49px;
+  left: 35px;
 }
 
 .weather-details {
@@ -70,7 +71,7 @@ small {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
-  margin-top: 25px;
+  margin-top: 20px;
   max-width: 90%;
   padding-top: 10px;
   position: static;
