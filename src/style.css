@@ -11,6 +11,7 @@ form {
 h1 {
   font-size: 80px;
   margin-bottom: 0;
+  padding-bottom: 10px;
   padding-top: 120px;
 }
 a {
@@ -71,7 +72,7 @@ small {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 15px;
   max-width: 90%;
   padding-top: 10px;
   position: static;
