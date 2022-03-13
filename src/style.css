@@ -10,8 +10,8 @@ form {
 }
 h1 {
   font-size: 80px;
-  margin-bottom: 5px;
-  padding-top: 110px;
+  margin-bottom: 10px;
+  padding-top: 120px;
 }
 a {
   color: black;
@@ -38,7 +38,7 @@ small {
 }
 
 .weather-details {
-  margin-bottom: 100px;
+  margin-bottom: 63px;
   line-height: 1.2;
 }
 .wind-details,
@@ -67,8 +67,10 @@ small {
 .mist {
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 8px;
   display: block;
   margin: 0 auto;
+  margin-top: 25px;
   max-width: 90%;
   padding-top: 10px;
   position: static;
